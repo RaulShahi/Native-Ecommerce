@@ -4,6 +4,8 @@ import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import {ProductItemProps} from '../../constants/interfaces';
 
 const ProductItem = ({product}: {product: ProductItemProps}) => {
+  const fullStars = new Array(Math.floor(product?.avgRating))?.fill('a');
+  const decRating = +product?.avgRating?.toString()?.split('.')[1];
   return (
     <View style={styles.root}>
       <Image
@@ -17,9 +19,12 @@ const ProductItem = ({product}: {product: ProductItemProps}) => {
           {product?.title}
         </Text>
         <View style={styles.ratingsContainer}>
-          {new Array(Math.floor(product?.avgRating))?.map(item => (
+          {fullStars?.map(item => (
             <FontAwesome name="star" size={18} color="#e47911" />
           ))}
+          {decRating !== 0 && (
+            <FontAwesome name="star-half-full" size={18} color="#e47911" />
+          )}
 
           <Text>{product?.ratings}</Text>
         </View>
