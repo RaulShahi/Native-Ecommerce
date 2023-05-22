@@ -19,8 +19,13 @@ const ProductItem = ({product}: {product: ProductItemProps}) => {
           {product?.title}
         </Text>
         <View style={styles.ratingsContainer}>
-          {fullStars?.map(item => (
-            <FontAwesome name="star" size={18} color="#e47911" />
+          {fullStars?.map((item, index) => (
+            <FontAwesome
+              name="star"
+              size={18}
+              color="#e47911"
+              key={`${product.id}-${index}`}
+            />
           ))}
           {decRating !== 0 && (
             <FontAwesome name="star-half-full" size={18} color="#e47911" />

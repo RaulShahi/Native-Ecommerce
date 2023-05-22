@@ -1,5 +1,5 @@
 import {StyleSheet, Text, View, Image} from 'react-native';
-import Products from '../components/Products';
+import Products from '../../components/Products';
 
 const HomeScreen = () => {
   return (

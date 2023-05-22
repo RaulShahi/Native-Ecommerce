@@ -10,7 +10,8 @@ import type {PropsWithChildren} from 'react';
 import {StatusBar, useColorScheme, View, SafeAreaView} from 'react-native';
 
 import Icon from 'react-native-vector-icons/FontAwesome';
-import HomeScreen from './src/screens/HomeScreen';
+import HomeScreen from './src/screens/HomeScreen/HomeScreen';
+import ProductScreen from './src/screens/ProductScreen/ProductScreen';
 import {Colors} from 'react-native/Libraries/NewAppScreen';
 
 function App(): JSX.Element {
@@ -23,7 +24,8 @@ function App(): JSX.Element {
   return (
     <SafeAreaView style={backgroundStyle}>
       {/* <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} /> */}
-      <HomeScreen />
+      {/* <HomeScreen /> */}
+      <ProductScreen />
     </SafeAreaView>
   );
 }
