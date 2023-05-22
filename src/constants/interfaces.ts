@@ -7,3 +7,10 @@ export interface ProductItemProps {
   avgRating: number;
   oldPrice?: number;
 }
+
+export interface CartProductItemProps {
+  id: string;
+  quantity: number;
+  option?: string;
+  item: ProductItemProps;
+}
