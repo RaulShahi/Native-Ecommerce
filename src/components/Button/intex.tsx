@@ -4,11 +4,12 @@ import React from 'react';
 interface ButtonProps {
   children: React.ReactNode;
   onPress: () => void;
+  containerStyles?: any;
 }
 
-const Button = ({children, onPress}: ButtonProps) => {
+const Button = ({children, onPress, containerStyles}: ButtonProps) => {
   return (
-    <Pressable onPress={onPress} style={styles.root}>
+    <Pressable onPress={onPress} style={[styles.root, containerStyles]}>
       <Text style={styles.text}>{children}</Text>
     </Pressable>
   );
